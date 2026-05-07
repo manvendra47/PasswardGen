@@ -1,73 +1,48 @@
-# React + TypeScript + Vite
+# Password Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, secure, and highly customizable password generator built with React, Vite, and Tailwind CSS. 
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Customizable Length**: Choose password lengths from 8 to 32 characters.
+- **Character Options**: Toggle uppercase letters, lowercase letters, numbers, and symbols.
+- **Visual Strength Indicator**: Real-time feedback on the strength of your generated password based on entropy.
+- **One-Click Copy**: Easily copy the generated password to your clipboard.
+- **Password History**: Keeps track of your 10 most recently generated passwords, persisted in your browser's local storage.
+- **Secure Generation**: Uses `window.crypto.getRandomValues` for cryptographically secure random number generation.
+- **Dark Mode UI**: A sleek, dark-themed interface built with Tailwind CSS.
 
-## React Compiler
+## Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Follow these steps to set up and run the project locally:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. **Install dependencies:**
+   \`\`\`bash
+   npm install
+   \`\`\`
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. **Start the development server:**
+   \`\`\`bash
+   npm run dev
+   \`\`\`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. **Open in browser:**
+   Navigate to the URL provided in your terminal (usually \`http://localhost:5173\` or \`http://localhost:3000\`).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Project Structure
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- \`src/App.tsx\`: Main application container and logic.
+- \`src/components/\`: Reusable UI components (\`StrengthIndicator\`, \`CustomCheckbox\`, \`PasswordHistory\`, \`icons\`).
+- \`src/utils/\`: Utility functions (e.g., secure random number generation).
+- \`src/constants.ts\`: Character pool constants.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Technologies Used
+
+- [React 19](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
